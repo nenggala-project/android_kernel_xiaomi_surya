@@ -4,7 +4,7 @@
 
 #include <linux/types.h>
 
-#ifndef __struct_sched_param_defined
+#if !defined(__struct_sched_param_defined) && !defined(__BIONIC__) && !defined(__GLIBC__) && !defined(_SCHED_H)
 #define __struct_sched_param_defined
 struct sched_param {
 	int sched_priority;
